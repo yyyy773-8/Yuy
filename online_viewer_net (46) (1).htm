@@ -1,0 +1,271 @@
+<!DOCTYPE html> 
+<html lang="ru"> 
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoyalMonarchy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>RoyalMonarchy</title> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #005EB8; /* Цвет фона заголовка */
+            padding: 10px 2px;
+            color: white;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav {
+            display: block;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Эффект при наведении */
+        }
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+        /* Стили для мобильного меню */
+        @media (max-width: 768px) {
+            nav {
+                
+                flex-direction: column;
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 60px; /* Под заголовком */
+                background: #005EB8;
+                z-index: 1;
+            }
+            nav.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Без прокрутки */
+        }
+        .slanted {
+            position: relative;
+            height: 500px; /* Высота наклонной полосы */
+            width:100%;
+            Чтобы не было видимо за пределами */
+            background-color: #005EB8; /* Цвет фона для наклонной полосы */
+        }
+  
+        }
+        .content {
+            position: absolute;
+            top: 50%; /* Центрирование по вертикали */
+            left: 50%; /* Центрирование по горизонтали */
+            transform: translate(-50%, -50%);
+            z-index: 2; /* Поверх наложенного фона */
+            text-align: center;
+            color: black; /* Цвет текста */
+            font-size: 24px; /* Размер текста */
+            font-weight: bold; /* Жирный текст */
+        }
+        .video-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0; /* Чтобы видео было под текстом */
+        }
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%; /* Обрезка видео по ширине */
+            min-height: 100%; /* Обрезка видео по высоте */
+            width: auto; /* Авто размер */
+            height: auto; /* Авто размер */
+            transform: translate(-50%, -50%); /* Центрирование видео */
+            object-fit: cover; /* Обеспечение обрезки без изменения пропорций */
+        }
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%; /* Обрезка видео по ширине */
+            min-height: 100%; /* Обрезка видео по высоте */
+            width: 30%; /* Авто размер */
+            height: 20%; /* Авто размер */
+            transform: translate(-50%, -50%); /* Центрирование видео */
+            object-fit: cover; /* Обеспечение обрезки без изменения пропорций */
+        }
+        .img-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0; /* Чтобы видео было под текстом */
+        }
+                /* Украшение заголовка */
+        h1::before,
+        h1::after {
+            content: '';
+            display: inline-block;
+            width: 50px;
+            height: 2px;
+            background-color: #b8860b;
+            margin: 0 20px;
+            vertical-align: middle;
+        }h1 {
+            text-align: center;
+            color: #2E2E2E ; /* Синий */
+            margin-bottom: 15px;
+            font-size: 2.8em;
+            margin-top: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Тень заголовка */
+        } section,
+        main,
+        footer {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            position: relative; /* Для правильного позиционирования h1::before и h1::after */
+        }
+        h1 {
+            text-align: center;
+            font-family: 'Lora', serif;
+            color: #b8860b;
+            margin-bottom: 20px;
+            font-size: 3em;
+            font-style: italic;
+            
+        }
+
+        /* Убираем полосы у h1 с классом no-stripes */
+        h1.no-stripes::before,
+        h1.no-stripes::after {
+            content: none;
+        }
+
+        /* Добавляем полосы ко всем h1, кроме h1.no-stripes */
+        h1::before,
+        h1::after {
+            content: '';
+            display: inline-block;
+            width: 50px;
+            height: 2px;
+            background-color: #b8860b;
+            margin: 0 20px;
+            vertical-align: middle;
+            
+        }
+
+        h2 {
+            font-family: 'Lora', serif;
+            color: #b8860b;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: '\265A';
+            position: absolute;
+            left: 0;
+            color: #b8860b;
+        }
+
+        p,
+        li {
+            font-size: 1.1em;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+                        margin-top: 40px;
+        }
+        
+    </style>
+    </style>
+</head> 
+<body> 
+    <header>
+        <div class="logo">RoyalMonarchy</div>
+        <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+        </div>
+        <nav id="navMenu">
+           <a href="index.html">Главная</a>
+            <a href="timeline.html">Хронология</a>
+           <a href="notable_figures.html">Знаменитые фигуры</a>
+            <a href="resources.html">Ресурсы</a> 
+          <a href="important_events.html">События в истории</a>
+            <a href="contact.html">Интерактивы</a>
+        </nav>
+    </header>
+
+
+</div>
+
+    <div class="slanted">
+<img src="https://optim.tildacdn.pub/tild6531-3635-4562-b930-656638316636/-/format/webp/1742031034364_1.jpeg">
+</div>
+    <section>
+        <h2>Добро пожаловать на наш сайт!</h2> 
+        <p>Сайт RoyalMonarchy создан для знакомства пользователей с богатой историей  
+        британского монарха и его династий. Мы стремимся предоставить актуальную информацию о  
+        различных династиях, значимых событиях и выдающихся личностях, которые сформировали историю  
+        Великобритании.</p> 
+<p>Великобритания, с её богатой историей и культурным наследием, является домом для ряда королевских династий, которые оставили неизгладимый след в судьбе страны и её народа. От саксов до Тюдоров и Стюартов, каждая династия привнесла свои уникальные традиции, обычаи и достижения, формируя облик современного британского общества.</p>
+<p>Но почему важно изучать королевские династии? Ответ прост: понимание истории монархии помогает нам лучше осознать наше прошлое и его влияние на настоящее. Королевские семьи были не только символами власти, но и катализаторами изменений, способствовавшими развитию демократии, культуры и искусства. Они вдохновляли на великие свершения и служили примером для подражания.</p>
+<p>На нашем сайте вы найдете увлекательные материалы о каждой династии, их значении в истории Великобритании, а также о ключевых фигурах, которые определяли ход событий. Мы приглашаем вас погрузиться в захватывающий мир монархии, исследуя её тайны и величие.</p>
+<p>
+Присоединяйтесь к нам в этом путешествии по страницам истории и откройте для себя удивительные факты о королевских династиях, которые продолжают влиять на нашу жизнь и сегодня!</p>
+</SECTION>
+</main> 
+    <script>
+        // JavaScript для управления открытием и закрытием мобильного меню
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            const nav = document.getElementById('navMenu');
+            nav.classList.toggle('active');
+        });
+    </script>
+<footer> 
+    <p>&copy; 2025 RoyalMonarchy</p>
+</footer> 
+</body> 
+</html>
